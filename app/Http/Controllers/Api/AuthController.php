@@ -11,16 +11,60 @@ class AuthController extends Controller
 {
     public function register(Request $request)
 {
-    $request->validate([
+       $request->validate([
         'name' => 'required',
+        'email' => 'required|email|unique:users',
         'phone' => 'required|unique:users',
         'password' => 'required|min:6',
     ]);
     $user = User::create([
         'name' => $request->name,
+        'email' => $request->email,
         'phone' => $request->phone,
         'password' => bcrypt($request->password),
         'role' => 'customer'
+    ]);
+    $token = $user->createToken('api-token')->plainTextToken;
+    return response()->json([
+        'user' => $user,
+        'token' => $token
+    ]);
+}
+
+    public function registerCustomer(Request $request)
+{
+    $request->validate([
+        'name' => 'required',
+        'email' => 'required|email|unique:users',
+        'phone' => 'required|unique:users',
+        'password' => 'required|min:6',
+    ]);
+    $user = User::create([
+        'name' => $request->name,
+        'email' => $request->email,
+        'phone' => $request->phone,
+        'password' => bcrypt($request->password),
+        'role' => 'customer'
+    ]);
+    $token = $user->createToken('api-token')->plainTextToken;
+    return response()->json([
+        'user' => $user,
+        'token' => $token
+    ]);
+}
+public function registerCourier(Request $request)
+{
+$request->validate([
+    'name' => 'required',
+    'phone' => 'required|unique:users',
+    'password' => 'required|min:6',
+]);
+$user = User::create([
+    'name' => $request->name,
+    'email' => $request->email,
+    'phone' => $request->phone,
+    'password' => bcrypt($request->password),
+    'role' => 'courier'
     ]);
     $token = $user->createToken('api-token')->plainTextToken;
     return response()->json([
