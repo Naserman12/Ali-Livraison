@@ -1,4 +1,4 @@
-import { Logger } from 'node_modules/concurrently'
+
 import { createI18n } from 'vue-i18n'
 
 const messages = {
