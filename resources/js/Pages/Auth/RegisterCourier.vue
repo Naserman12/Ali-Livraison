@@ -7,7 +7,6 @@
         <h1 class="text-3xl font-bold">{{ $t('create_account_con') }}</h1>
         <p class="text-gray-500">{{ $t('create_account_con_subtitle') }}</p>
       </div>
-
       <form @submit.prevent="submit" class="service-card space-y-4">
 
         <input v-model="form.name" type="text" placeholder="Full Name"
@@ -32,9 +31,6 @@
         </button>
 
       </form>
-
-    </div>
-
   </div>
 </template>
 
