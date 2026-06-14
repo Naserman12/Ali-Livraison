@@ -1,38 +1,19 @@
 <template>
-    <Header/>
-        <div class="bg-white p-4 rounded shadow">
-            <h1 class="text-2xl font-bold mb-4">👤 {{$t('users')}}</h1>
-            <div v-for="user in users" :key="user.id" class="border-b p-2">
-                <p> {{ user.name }}</p>
-                <p class="text-sm text-gray-500">{{ user.phone }}</p>
-                <select v-model="user.role" @change="updateRole(user)">
-                    <option value="customer">${$t('customer')}</option>
-                    <option value="courier">${$t('courier')}</option>
-                    <option value="admin">${$t('admin')}</option>
-                </select>
-            </div>
-        </div>
-  <div class="bg-white">
-
-```
-<!-- Hero Section -->
-<section class="bg-gradient-to-b from-cyan-50 to-white py-20">
-  <div class="max-w-7xl mx-auto px-6">
-
-    <div class="grid md:grid-cols-2 gap-12 items-center">
+  <Header/>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-b from-[#FF7A00] to-[#E86A00] py-20 text-white fade-in">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
 
       <div>
-        <span
-          class="inline-block px-4 py-2 bg-cyan-100 text-cyan-700 rounded-full text-sm font-semibold mb-4"
-        >
+        <span class="inline-block px-4 py-2 bg-white/20 text-white rounded-full text-sm font-semibold mb-4 backdrop-blur">
           🚚 Ali Livraison Express
         </span>
 
-        <h1 class="text-5xl font-extrabold text-gray-900 leading-tight">
+        <h1 class="text-5xl font-extrabold leading-tight animate-slide-up">
           {{ $t('hero_title') }}
         </h1>
 
-        <p class="mt-6 text-lg text-gray-600 leading-relaxed">
+        <p class="mt-6 text-lg text-white/90 leading-relaxed animate-fade-up">
           {{ $t('hero_subtitle') }}
         </p>
 
@@ -40,14 +21,14 @@
 
           <Link
             href="/register/customer"
-            class="px-6 py-3 bg-cyan-600 text-white rounded-xl hover:bg-cyan-700 transition"
+            class="px-6 py-3 bg-black text-white rounded-xl hover:bg-white hover:text-black transition-all duration-300 shadow-lg hover:shadow-2xl hover:-translate-y-1"
           >
             {{ $t('order_now') }}
           </Link>
 
           <Link
             href="/register/courier"
-            class="px-6 py-3 border border-cyan-600 text-cyan-600 rounded-xl hover:bg-cyan-50 transition"
+            class="px-6 py-3 border border-white text-white rounded-xl hover:bg-white hover:text-black transition-all duration-300 hover:-translate-y-1"
           >
             {{ $t('become_courier') }}
           </Link>
@@ -55,248 +36,194 @@
         </div>
       </div>
 
-      <div class="flex justify-center">
-        <img
-          src="/images/delivery-hero.svg"
-          class="w-full max-w-lg"
-          alt="Ali Livraison Express"
-        >
+      <div class="flex justify-center animate-float">
+        <img src="/images/delivery-hero.svg" class="w-full max-w-lg drop-shadow-xl">
       </div>
 
     </div>
+  </section>
 
-  </div>
-</section>
+  <!-- Services -->
+  <section class="py-20 fade-in">
+    <div class="max-w-7xl mx-auto px-6">
 
-<!-- Services -->
-<section class="py-20">
-  <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-[#0D0D0D] animate-slide-up">
+          {{ $t('services') }}
+        </h2>
 
-    <div class="text-center mb-12">
-      <h2 class="text-4xl font-bold text-gray-900">
-        {{ $t('services') }}
-      </h2>
-
-      <p class="mt-4 text-gray-600">
-        {{ $t('services_subtitle') }}
-      </p>
-    </div>
-
-    <div class="grid md:grid-cols-4 gap-6">
-
-      <div class="bg-white shadow-lg rounded-2xl p-6 text-center border border-cyan-100">
-        <div class="text-5xl mb-4">📦</div>
-        <h3 class="font-bold text-xl">{{ $t('parcels') }}</h3>
+        <p class="mt-4 text-gray-600 animate-fade-up">
+          {{ $t('services_subtitle') }}
+        </p>
       </div>
 
-      <div class="bg-white shadow-lg rounded-2xl p-6 text-center border border-cyan-100">
-        <div class="text-5xl mb-4">🍔</div>
-        <h3 class="font-bold text-xl">{{ $t('food') }}</h3>
-      </div>
+      <div class="grid md:grid-cols-4 gap-6">
 
-      <div class="bg-white shadow-lg rounded-2xl p-6 text-center border border-cyan-100">
-        <div class="text-5xl mb-4">📄</div>
-        <h3 class="font-bold text-xl">{{ $t('documents') }}</h3>
-      </div>
+        <div class="service-card">
+          <div class="text-5xl mb-4">📦</div>
+          <h3 class="font-bold text-xl">{{ $t('parcels') }}</h3>
+        </div>
 
-      <div class="bg-white shadow-lg rounded-2xl p-6 text-center border border-cyan-100">
-        <div class="text-5xl mb-4">🛒</div>
-        <h3 class="font-bold text-xl">{{ $t('shopping') }}</h3>
-      </div>
+        <div class="service-card">
+          <div class="text-5xl mb-4">🍔</div>
+          <h3 class="font-bold text-xl">{{ $t('food') }}</h3>
+        </div>
 
-    </div>
+        <div class="service-card">
+          <div class="text-5xl mb-4">📄</div>
+          <h3 class="font-bold text-xl">{{ $t('documents') }}</h3>
+        </div>
 
-  </div>
-</section>
+        <div class="service-card">
+          <div class="text-5xl mb-4">🛒</div>
+          <h3 class="font-bold text-xl">{{ $t('shopping') }}</h3>
+        </div>
 
-<!-- Why Choose Us -->
-<section class="bg-cyan-50 py-20">
-
-  <div class="max-w-7xl mx-auto px-6">
-
-    <div class="text-center mb-12">
-      <h2 class="text-4xl font-bold">
-        {{ $t('why_choose_us') }}
-      </h2>
-    </div>
-
-    <div class="grid md:grid-cols-3 gap-8">
-
-      <div class="bg-white p-8 rounded-2xl shadow">
-        📍 {{ $t('live_tracking') }}
-      </div>
-
-      <div class="bg-white p-8 rounded-2xl shadow">
-        🔔 {{ $t('instant_notifications') }}
-      </div>
-
-      <div class="bg-white p-8 rounded-2xl shadow">
-        🔐 {{ $t('qr_security') }}
-      </div>
-
-      <div class="bg-white p-8 rounded-2xl shadow">
-        💰 {{ $t('transparent_prices') }}
-      </div>
-
-      <div class="bg-white p-8 rounded-2xl shadow">
-        🌍 {{ $t('multilingual') }}
-      </div>
-
-      <div class="bg-white p-8 rounded-2xl shadow">
-        ⭐ {{ $t('trusted_service') }}
       </div>
 
     </div>
+  </section>
 
-  </div>
+  <!-- Why Choose Us -->
+  <section class="bg-[#FFF4E8] py-20 fade-in">
 
-</section>
+    <div class="max-w-7xl mx-auto px-6">
 
-<!-- How it works -->
-<section class="py-20">
-
-  <div class="max-w-7xl mx-auto px-6">
-
-    <div class="text-center mb-12">
-      <h2 class="text-4xl font-bold">
-        {{ $t('how_it_works') }}
-      </h2>
-    </div>
-
-    <div class="grid md:grid-cols-2 gap-10">
-
-      <div class="bg-white shadow-lg rounded-2xl p-8">
-
-        <h3 class="text-2xl font-bold mb-6">
-          👤 {{ $t('customer') }}
-        </h3>
-
-        <ul class="space-y-3">
-          <li>1. {{ $t('step_customer_1') }}</li>
-          <li>2. {{ $t('step_customer_2') }}</li>
-          <li>3. {{ $t('step_customer_3') }}</li>
-          <li>4. {{ $t('step_customer_4') }}</li>
-          <li>5. {{ $t('step_customer_5') }}</li>
-        </ul>
-
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-[#0D0D0D] animate-slide-up">
+          {{ $t('why_choose_us') }}
+        </h2>
       </div>
 
-      <div class="bg-white shadow-lg rounded-2xl p-8">
+      <div class="grid md:grid-cols-3 gap-8">
 
-        <h3 class="text-2xl font-bold mb-6">
-          🚚 {{ $t('courier') }}
-        </h3>
-
-        <ul class="space-y-3">
-          <li>1. {{ $t('step_courier_1') }}</li>
-          <li>2. {{ $t('step_courier_2') }}</li>
-          <li>3. {{ $t('step_courier_3') }}</li>
-          <li>4. {{ $t('step_courier_4') }}</li>
-          <li>5. {{ $t('step_courier_5') }}</li>
-        </ul>
+        <div class="why-card">📍 {{ $t('live_tracking') }}</div>
+        <div class="why-card">🔔 {{ $t('instant_notifications') }}</div>
+        <div class="why-card">🔐 {{ $t('qr_security') }}</div>
+        <div class="why-card">💰 {{ $t('transparent_prices') }}</div>
+        <div class="why-card">🌍 {{ $t('multilingual') }}</div>
+        <div class="why-card">⭐ {{ $t('trusted_service') }}</div>
 
       </div>
 
     </div>
 
-  </div>
+  </section>
 
-</section>
+  <!-- How it works -->
+  <section class="py-20 fade-in">
 
-<!-- Stats -->
-<section class="bg-cyan-600 py-20 text-white">
+    <div class="max-w-7xl mx-auto px-6">
 
-  <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-[#0D0D0D] animate-slide-up">
+          {{ $t('how_it_works') }}
+        </h2>
+      </div>
 
-    <div class="grid md:grid-cols-4 gap-8 text-center">
+      <div class="grid md:grid-cols-2 gap-10">
+
+        <div class="how-card">
+          <h3 class="text-2xl font-bold mb-6">👤 {{ $t('customer') }}</h3>
+          <ul class="space-y-3">
+            <li>1. {{ $t('step_customer_1') }}</li>
+            <li>2. {{ $t('step_customer_2') }}</li>
+            <li>3. {{ $t('step_customer_3') }}</li>
+            <li>4. {{ $t('step_customer_4') }}</li>
+            <li>5. {{ $t('step_customer_5') }}</li>
+          </ul>
+        </div>
+
+        <div class="how-card">
+          <h3 class="text-2xl font-bold mb-6">🚚 {{ $t('courier') }}</h3>
+          <ul class="space-y-3">
+            <li>1. {{ $t('step_courier_1') }}</li>
+            <li>2. {{ $t('step_courier_2') }}</li>
+            <li>3. {{ $t('step_courier_3') }}</li>
+            <li>4. {{ $t('step_courier_4') }}</li>
+            <li>5. {{ $t('step_courier_5') }}</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Stats -->
+  <section class="bg-[#0D0D0D] py-20 text-white fade-in">
+
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-8 text-center">
 
       <div>
-        <div class="text-5xl font-bold">5000+</div>
+        <div class="text-5xl font-bold text-[#FF7A00]">5000+</div>
         <p>{{ $t('completed_orders') }}</p>
       </div>
 
       <div>
-        <div class="text-5xl font-bold">120+</div>
+        <div class="text-5xl font-bold text-[#FF7A00]">120+</div>
         <p>{{ $t('active_couriers') }}</p>
       </div>
 
       <div>
-        <div class="text-5xl font-bold">3000+</div>
+        <div class="text-5xl font-bold text-[#FF7A00]">3000+</div>
         <p>{{ $t('customers') }}</p>
       </div>
 
       <div>
-        <div class="text-5xl font-bold">98%</div>
+        <div class="text-5xl font-bold text-[#FF7A00]">98%</div>
         <p>{{ $t('satisfaction') }}</p>
       </div>
 
     </div>
 
-  </div>
+  </section>
 
-</section>
+  <!-- Cities -->
+  <section class="py-20 fade-in">
 
-<!-- Cities -->
-<section class="py-20">
+    <div class="max-w-7xl mx-auto px-6 text-center">
 
-  <div class="max-w-7xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold mb-8 text-[#0D0D0D] animate-slide-up">
+        {{ $t('supported_cities') }}
+      </h2>
 
-    <h2 class="text-4xl font-bold mb-8">
-      {{ $t('supported_cities') }}
-    </h2>
-
-    <div class="flex flex-wrap justify-center gap-4">
-
-      <span class="bg-cyan-100 px-6 py-3 rounded-full">
-        Niamey
-      </span>
-
-      <span class="bg-cyan-100 px-6 py-3 rounded-full">
-        Maradi
-      </span>
-
-      <span class="bg-cyan-100 px-6 py-3 rounded-full">
-        Zinder
-      </span>
-
-      <span class="bg-cyan-100 px-6 py-3 rounded-full">
-        Tahoua
-      </span>
-
-      <span class="bg-cyan-100 px-6 py-3 rounded-full">
-        Dosso
-      </span>
+      <div class="flex flex-wrap justify-center gap-4">
+        <span class="city-pill">Niamey</span>
+        <span class="city-pill">Maradi</span>
+        <span class="city-pill">Zinder</span>
+        <span class="city-pill">Tahoua</span>
+        <span class="city-pill">Dosso</span>
+      </div>
 
     </div>
 
-  </div>
+  </section>
 
-</section>
+  <!-- Footer -->
+  <footer class="bg-[#0D0D0D] text-white py-12 border-t-4 border-[#FF7A00] fade-in">
 
-<!-- Footer -->
-<footer class="bg-gray-900 text-white py-12">
+    <div class="max-w-7xl mx-auto px-6 text-center">
 
-  <div class="max-w-7xl mx-auto px-6 text-center">
-
-    <h3 class="text-2xl font-bold">
+      <h3 class="text-2xl font-bold">
         {{ $t('footer_title') }}
-    </h3>
+      </h3>
 
-    <p class="mt-4 text-gray-400">
-      {{ $t('footer_text') }}
-    </p>
+      <p class="mt-4 text-gray-400">
+        {{ $t('footer_text') }}
+      </p>
 
-    <div class="mt-6">
-      © 2026 Ali Livraison Express
+      <div class="mt-6">
+        © 2026 Ali Livraison Express
+      </div>
+
     </div>
 
-  </div>
+  </footer>
 
-</footer>
-```
-
-  </div>
 </template>
+
 <script setup>
 import { Link } from '@inertiajs/vue3'
 import { useI18n } from 'vue-i18n'
@@ -320,3 +247,75 @@ watch(locale, (lang) => {
   document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr'
 })
 </script>
+
+<style>
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes slideUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up {
+  animation: fadeUp 1s ease forwards;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.service-card,
+.why-card,
+.how-card {
+  background: white;
+  border: 1px solid #FF7A00;
+  padding: 24px;
+  border-radius: 16px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.service-card:hover,
+.why-card:hover,
+.how-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.city-pill {
+  background: #FF7A00;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 999px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.city-pill:hover {
+  background: #E86A00;
+  transform: scale(1.05);
+}
+</style>
