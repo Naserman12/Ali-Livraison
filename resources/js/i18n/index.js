@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> f1570dc (Add home Page0.2)
 import { createI18n } from 'vue-i18n'
 
 const messages = {
