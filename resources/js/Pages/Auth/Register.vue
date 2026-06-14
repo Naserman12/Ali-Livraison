@@ -1,5 +1,5 @@
 <template>
-    <header />
+    <Header />
   <div class="min-h-screen flex items-center justify-center bg-gray-50 px-4 fade-in">
 
     <div class="w-full max-w-3xl text-center animate-slide-up">

@@ -33,14 +33,7 @@ Route::middleware('auth')->group(function () {
 Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/admin/dashboard', fn () =>
         Inertia::render('Admin/Dashboard')
-    );
-
-    Route::get('/admin/orders', fn () =>
-        Inertia::render('Admin/Orders')
-    );
-    Route::get('/admin/dashboard', fn () =>
-    Inertia::render('Admin/Dashboard')
-    );
+    )->name('admin.dashboard');
 
     Route::get('/admin/orders', fn () =>
         Inertia::render('Admin/Orders')
@@ -65,7 +58,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/orders', [OrderController::class, 'store']);
     Route::get('/customer/dashboard', function () {
         return Inertia::render('Customer/Dashboard');
-    });
+    })->name('customer.dashboard');
 
     Route::get('/customer/orders/create', function () {
         return Inertia::render('Customer/CreateOrder');
@@ -87,7 +80,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/courier/dashboard', function () {
         return Inertia::render('Courier/Dashboard');
-    });
+    })->name('courier.dashboard');
 
     Route::get('/courier/orders', function () {
         return Inertia::render('Courier/AvailableOrders');

@@ -5,7 +5,7 @@ import AdminSidebar from '../Components/AdminSidebar.vue'
 
 <template>
   <div :dir="locale === 'ar' ? 'rtl' : 'ltr'" class="min-h-screen bg-gray-100">
-      <Header />
+      <!-- <Header /> -->
     <AdminSidebar />
 
 

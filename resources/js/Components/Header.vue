@@ -5,7 +5,7 @@ import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 const { locale } = useI18n()
 const  notifications = ref([])
-const isLoggedIn = ref(true) // سنربطه لاحقًا بـ auth
+const user = page.props.auth?.user // سنربطه لاحقًا بـ auth
 </script>
 
 <template>
@@ -38,8 +38,11 @@ const isLoggedIn = ref(true) // سنربطه لاحقًا بـ auth
       </button>
 
       <!-- 👤 Auth -->
-      <template v-if="isLoggedIn">
-
+       
+      <template v-if="user">
+      <Link :href="route('dashboard')">
+      {{ $t('dashboard') }}
+      </Link>
         <button
           @click="router.post('/logout')"
           class="text-red-600"

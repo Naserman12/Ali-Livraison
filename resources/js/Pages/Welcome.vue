@@ -1,5 +1,6 @@
 <template>
   <Header/>
+
   <!-- Hero Section -->
   <section class="bg-gradient-to-b from-[#FF7A00] to-[#E86A00] py-20 text-white fade-in">
     <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
@@ -17,23 +18,38 @@
           {{ $t('hero_subtitle') }}
         </p>
 
-        <div class="mt-8 flex flex-wrap gap-4">
+    <div class="mt-8 flex flex-wrap gap-4">
 
-          <Link
-            href="/register/customer"
-            class="px-6 py-3 bg-black text-white rounded-xl hover:bg-white hover:text-black transition-all duration-300 shadow-lg hover:shadow-2xl hover:-translate-y-1"
-          >
-            {{ $t('order_now') }}
-          </Link>
+  <template v-if="!user">
 
-          <Link
-            href="/register/courier"
-            class="px-6 py-3 border border-white text-white rounded-xl hover:bg-white hover:text-black transition-all duration-300 hover:-translate-y-1"
-          >
-            {{ $t('become_courier') }}
-          </Link>
+    <Link
+      href="/register/customer"
+      class="px-6 py-3 bg-black text-white rounded-xl hover:bg-white hover:text-black transition-all duration-300"
+    >
+      {{ $t('order_now') }}
+    </Link>
 
-        </div>
+    <Link
+      href="/register/courier"
+      class="px-6 py-3 border border-white text-white rounded-xl hover:bg-white hover:text-black transition-all duration-300"
+    >
+      {{ $t('become_courier') }}
+    </Link>
+
+  </template>
+
+  <template v-else>
+
+    <Link
+      :href="route('dashboard')"
+      class="px-8 py-3 bg-black text-white rounded-xl hover:bg-white hover:text-black transition-all duration-300 shadow-lg"
+    >
+      🏠 {{ $t('dashboard') }}
+    </Link>
+
+  </template>
+
+</div>
       </div>
 
       <div class="flex justify-center animate-float">
@@ -231,7 +247,7 @@ import { watch, onMounted } from 'vue'
 import Header from '@/Components/Header.vue'
 
 const { locale } = useI18n()
-
+const user = page.props.auth?.user
 function switchLanguage(lang) {
   locale.value = lang
   localStorage.setItem('lang', lang)

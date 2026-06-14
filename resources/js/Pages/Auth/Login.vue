@@ -24,7 +24,6 @@ const submit = () => {
     <Head title="Login" />
 
     <Header />
-
     <div
         class="min-h-screen bg-gray-50 flex items-center justify-center px-4 py-20 fade-in"
     >

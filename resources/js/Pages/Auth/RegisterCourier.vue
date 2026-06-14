@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen flex items-center justify-center bg-gray-50 px-4 fade-in">
+    <Header/>
 
     <div class="w-full max-w-md animate-slide-up">
 
@@ -39,6 +39,7 @@
 </template>
 
 <script setup>
+import Header from '@/Components/Header.vue';
 import { useForm } from '@inertiajs/vue3'
 
 const form = useForm({
