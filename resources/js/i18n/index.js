@@ -50,6 +50,10 @@ const messages = {
         app_name: 'علي للتوصيل السريع',
 
 hero_title: 'شريكك الموثوق للتوصيل السريع في النيجر',
+customer_subtitle: 'اطلب وتابع طلبات التوصيل بسهولة',
+courier_subtitle: 'اكسب المال من خلال توصيل الطلبات',
+
+
 
 hero_subtitle:
 'منصة متكاملة لتوصيل الطرود والوجبات والمستندات والتسوق مع تتبع مباشر وإشعارات فورية وتأكيد التسليم عبر رمز QR.',
@@ -124,6 +128,12 @@ security: 'الأمان',
 contact_us: 'تواصل معنا',
 
 login: 'تسجيل الدخول',
+login_subtitle: 'قم بتسجيل الدخول للوصول إلى حسابك',
+password: 'كلمة المرور',
+remember_me: 'تذكرنى',
+dont_have_account: 'ليس لديك حساب؟',
+forgot_password: 'هل نسيت كلمة المرور؟',
+create_account: 'إنشاء حساب',
 
 register: 'إنشاء حساب',
 
@@ -153,6 +163,13 @@ logout: 'تسجيل الخروج',
 
 profile: 'الملف الشخصي',
 logged_in_as: 'تم تسجيل الدخول باسم {name}',
+chose_type: 'اختر نوع المستخدم',
+create_account_cus: 'تسجيل العميل',
+create_account_subtitle: 'أنشئ حسابك لبدء الطلب',
+create_account_con: 'تسجيل مندوب',
+create_account_con_subtitle: 'انضم إلينا وابدأ في كسب المال'
+
+
     },
 
     fr: {
@@ -173,7 +190,6 @@ logged_in_as: 'تم تسجيل الدخول باسم {name}',
     logout: 'Déconnexion',
     login: 'Connexion',
     logout: 'Déconnexion',
-    login: 'Connexion',
     create_order: 'Créer une commande',
     my_orders: 'Mes commandes',
     admin_panel: 'Panneau d\'administration',
@@ -282,6 +298,12 @@ security: 'Sécurité',
 contact_us: 'Contactez-nous',
 
 login: 'Connexion',
+login_subtitle: 'Connectez-vous à votre compte',
+password: 'Mot de passe',
+remember_me: 'Se souvenir de moi',
+dont_have_account: "Vous n'avez pas de compte ?",
+forgot_password: 'Mot de passe oublié ?',
+create_account: 'Créer un compte',
 
 register: 'Inscription',
 
@@ -311,11 +333,15 @@ logout: 'Déconnexion',
 
 profile: 'Profil',
 logged_in_as: 'Connecté en tant que {name}',
+chose_type: 'Choisissez le type d\'utilisateur',
+customer_subtitle: 'Commandez et suivez vos livraisons facilement',
+courier_subtitle: 'Gagnez de l’argent en livrant des commandes',
+create_account_cus: 'Inscription du client',
+create_account_subtitle: 'Créez votre compte pour commencer à commander',
+create_account_con: 'Inscription du livreur',
+create_account_con_subtitle: 'Rejoignez‑nous et commencez à gagner de l’argent',
 
-
-
-
-    }
+}
 }
 
 export default createI18n({

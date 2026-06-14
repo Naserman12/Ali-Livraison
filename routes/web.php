@@ -14,7 +14,9 @@ Route::get('/', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 });
-
+Route::get('/register/customer', fn () => inertia('Auth/RegisterCustomer'));
+Route::get('/register/courier', fn () => inertia('Auth/RegisterCourier'));
+Route::get('/register', fn () => inertia('Auth/RegisterChoice'));
 Route::get('/dashboard', [OrderController::class, 'index'])
     ->middleware('auth')
     ->name('dashboard');
@@ -55,7 +57,6 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     );
 });
 // من أجل الزبائن
-
 Route::middleware(['auth'])->group(function () {
     
 
