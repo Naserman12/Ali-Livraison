@@ -4,6 +4,9 @@ import { ref } from 'vue'
 
 import { useI18n } from 'vue-i18n'
 const { locale } = useI18n()
+import { usePage } from '@inertiajs/vue3'
+
+const page = usePage()
 const  notifications = ref([])
 const user = page.props.auth?.user // سنربطه لاحقًا بـ auth
 </script>

@@ -241,13 +241,17 @@
 </template>
 
 <script setup>
+
 import { Link } from '@inertiajs/vue3'
 import { useI18n } from 'vue-i18n'
 import { watch, onMounted } from 'vue'
 import Header from '@/Components/Header.vue'
+import { usePage } from '@inertiajs/vue3'
 
-const { locale } = useI18n()
+const page = usePage()
+
 const user = page.props.auth?.user
+const { locale } = useI18n()
 function switchLanguage(lang) {
   locale.value = lang
   localStorage.setItem('lang', lang)
