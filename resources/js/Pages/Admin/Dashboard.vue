@@ -1,7 +1,10 @@
 <script setup>
+import Header from '@/Components/Header.vue'
+import AdminLayout from '@/Layouts/AdminLayout.vue'
 </script>
 
 <template>
+  <Header />
   <AdminLayout>
     <div>
 

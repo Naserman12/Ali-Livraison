@@ -1,6 +1,10 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import axios from 'axios'
+import Header from '@/Components/Header.vue'
+import AdminLayout from '@/Layouts/AdminLayout.vue'
+
+
 
 const orders = ref([])
 
@@ -19,6 +23,7 @@ async function changeStatus(id, status) {
 </script>
 
 <template>
+  <Header />
   <AdminLayout>
 
     <h1 class="text-2xl font-bold mb-4">📦 {{$t('orders')}}</h1>

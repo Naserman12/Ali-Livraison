@@ -2,6 +2,7 @@
 import { ref, onMounted } from 'vue'
 import axios from 'axios'
 import L from 'leaflet'
+import header from '@/Components/Header.vue'
 
 const props = defineProps({ id: Number })
 const map = ref(null)
@@ -80,6 +81,7 @@ function updateMarker(lat, lng) {
 </script>
 
 <template>
+  <Header />
   <div class="min-h-screen bg-[#F5F5F5] p-6" >
       <!-- Loading -->
       <div v-if="loading" class="text-gray-600">

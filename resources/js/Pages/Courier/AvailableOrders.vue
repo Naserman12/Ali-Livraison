@@ -1,6 +1,7 @@
 <script setup>
 import { onMounted, ref } from 'vue'
 import axios from 'axios'
+import Header from '@/Components/Header.vue'
 
 const orders = ref([])
 
@@ -16,6 +17,7 @@ async function acceptOrder(id) {
 </script>
 
 <template>
+  <Header />
   <div class="min-h-screen bg-[#F5F5F5] p-6">
 
     <h1 class="text-xl font-bold text-[#1A1A1A] mb-4">

@@ -2,6 +2,7 @@
 import { ref, onMounted } from 'vue'
 import { router } from '@inertiajs/vue3'
 import AdminLayout from '@/Layouts/AdminLayout.vue'
+import Header from '@/Components/Header.vue'
 
 const form = ref({
   service_type_id: '',
@@ -27,6 +28,7 @@ onMounted(() => {
 </script>
 
 <template>
+  <Header />
   <AdminLayout>
   <div class="min-h-screen bg-[#F5F5F5] flex items-center justify-center p-6">
 

@@ -1,4 +1,5 @@
 <template>
+  <Header />
   <div class="min-h-screen bg-[#F5F5F5] p-6">
 
     <h1 class="text-2xl font-bold text-[#1A1A1A]">
@@ -23,3 +24,6 @@
 
   </div>
 </template>
+<script setup>
+import Header from '@/Components/Header.vue'
+</script>

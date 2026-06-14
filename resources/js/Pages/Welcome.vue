@@ -1,5 +1,5 @@
 <template>
-    <AdminLayout>
+    <Header/>
         <div class="bg-white p-4 rounded shadow">
             <h1 class="text-2xl font-bold mb-4">👤 {{$t('users')}}</h1>
             <div v-for="user in users" :key="user.id" class="border-b p-2">
@@ -296,12 +296,12 @@
 ```
 
   </div>
-  </AdminLayout>
 </template>
 <script setup>
 import { Link } from '@inertiajs/vue3'
 import { useI18n } from 'vue-i18n'
 import { watch, onMounted } from 'vue'
+import Header from '@/Components/Header.vue'
 
 const { locale } = useI18n()
 

@@ -1,9 +1,11 @@
 <script setup>
 import { Link } from '@inertiajs/vue3'
 import AdminLayout from '../../Layouts/AdminLayout.vue'
+import Header from '../../Components/Header.vue'
 </script>
 
 <template>
+  <Header />
   <AdminLayout>
   <div class="min-h-screen bg-[#F5F5F5] p-6">
 

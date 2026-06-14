@@ -1,3 +1,4 @@
+import { Logger } from 'node_modules/concurrently'
 import { createI18n } from 'vue-i18n'
 
 const messages = {
@@ -150,7 +151,8 @@ notifications: 'الإشعارات',
 
 logout: 'تسجيل الخروج',
 
-profile: 'الملف الشخصي'
+profile: 'الملف الشخصي',
+logged_in_as: 'تم تسجيل الدخول باسم {name}',
     },
 
     fr: {
@@ -307,7 +309,8 @@ notifications: 'Notifications',
 
 logout: 'Déconnexion',
 
-profile: 'Profil'
+profile: 'Profil',
+logged_in_as: 'Connecté en tant que {name}',
 
 
 

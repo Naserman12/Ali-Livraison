@@ -5,14 +5,14 @@ import AdminLayout from '@/Layouts/AdminLayout.vue';
 </script>
 
 <template>
-    <Head title="Dashboard" />
+    <Head title="{{ $t('dashboard') }}" />
     <AdminLayout>
     <!-- <AuthenticatedLayout> -->
         <template #header>
             <h2
                 class="text-xl font-semibold leading-tight text-gray-800"
             >
-                Dashboard
+                {{ $t('dashboard') }}
             </h2>
         </template>
 
@@ -22,7 +22,7 @@ import AdminLayout from '@/Layouts/AdminLayout.vue';
                     class="overflow-hidden bg-white shadow-sm sm:rounded-lg"
                 >
                     <div class="p-6 text-gray-900">
-                        You're logged in!
+                        {{ $t('logged_in_as', { name: user.name }) }}
                     </div>
                 </div>
             </div>

@@ -2,6 +2,7 @@
 import { onMounted, ref } from 'vue'
 import axios from 'axios'
 import { Link } from '@inertiajs/vue3'
+import Header from '@/Components/Header.vue'
 
 const orders = ref([])
 const loading = ref(true)
@@ -19,6 +20,7 @@ onMounted(async () => {
 </script>
 
 <template>
+  <Header />
   <div class="min-h-screen bg-[#F5F5F5] p-6">
 
     <!-- Title -->

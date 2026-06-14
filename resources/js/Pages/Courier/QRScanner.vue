@@ -2,6 +2,7 @@
 import { onMounted } from 'vue'
 import { Html5QrcodeScanner } from 'html5-qrcode'
 import axios from 'axios'
+import Header from '@/Components/Header.vue'
 
 const props = defineProps({
   orderId: Number,
@@ -34,6 +35,7 @@ onMounted(() => {
 </script>
 
 <template>
+  <Header />
   <div class="p-6">
 
     <h1 class="text-xl font-bold mb-4">
