@@ -133,6 +133,7 @@ register_as_courier: 'التسجيل كمندوب',
 order_now: 'اطلب الآن',
 
 become_courier: 'سجل كمندوب',
+footer_title: 'علي للتوصيل السريع',
 
 footer_text:
 'منصة توصيل حديثة تربط العملاء بالمندوبين لتقديم خدمات توصيل سريعة وآمنة داخل النيجر.',
@@ -289,6 +290,7 @@ register_as_courier: 'Inscription Livreur',
 order_now: 'Commander maintenant',
 
 become_courier: 'Devenir livreur',
+footer_title: 'Ali Livraison Express',
 
 footer_text:
 'Une plateforme moderne reliant clients et livreurs pour des livraisons rapides et sécurisées au Niger.',

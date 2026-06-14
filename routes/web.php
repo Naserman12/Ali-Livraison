@@ -15,9 +15,9 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [OrderController::class, 'index'])
+    ->middleware('auth')
+    ->name('dashboard');
 // هذه المسارات خاصة بالملف الشخصي للمستخدم
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -48,6 +48,10 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 
     Route::get('/admin/couriers', fn () =>
         Inertia::render('Admin/Couriers')
+    );
+    Route::patch(
+    '/admin/users/{user}/role',
+    [OrderController::class, 'updateRole']
     );
 });
 // من أجل الزبائن

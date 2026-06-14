@@ -20,6 +20,11 @@ onMounted(async () => {
 
         <p> {{ user.name }}</p>
         <p class="text-sm text-gray-500">{{ user.phone }}</p>
+        <select v-model="user.role">
+        <option value="customer">${$t('customer')}</option>
+        <option value="courier">${$t('courier')}</option>
+        <option value="admin">${$t('admin')}</option>
+        </select>
 
       </div>
 

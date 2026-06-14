@@ -1,4 +1,17 @@
 <template>
+    <AdminLayout>
+        <div class="bg-white p-4 rounded shadow">
+            <h1 class="text-2xl font-bold mb-4">👤 {{$t('users')}}</h1>
+            <div v-for="user in users" :key="user.id" class="border-b p-2">
+                <p> {{ user.name }}</p>
+                <p class="text-sm text-gray-500">{{ user.phone }}</p>
+                <select v-model="user.role" @change="updateRole(user)">
+                    <option value="customer">${$t('customer')}</option>
+                    <option value="courier">${$t('courier')}</option>
+                    <option value="admin">${$t('admin')}</option>
+                </select>
+            </div>
+        </div>
   <div class="bg-white">
 
 ```
@@ -266,7 +279,7 @@
   <div class="max-w-7xl mx-auto px-6 text-center">
 
     <h3 class="text-2xl font-bold">
-      Ali Livraison Express
+        {{ $t('footer_title') }}
     </h3>
 
     <p class="mt-4 text-gray-400">
@@ -283,4 +296,27 @@
 ```
 
   </div>
+  </AdminLayout>
 </template>
+<script setup>
+import { Link } from '@inertiajs/vue3'
+import { useI18n } from 'vue-i18n'
+import { watch, onMounted } from 'vue'
+
+const { locale } = useI18n()
+
+function switchLanguage(lang) {
+  locale.value = lang
+  localStorage.setItem('lang', lang)
+}
+
+onMounted(() => {
+  const savedLang = localStorage.getItem('lang')
+  if (savedLang) locale.value = savedLang
+})
+
+watch(locale, (lang) => {
+  document.documentElement.lang = lang
+  document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr'
+})
+</script>

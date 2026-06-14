@@ -7,9 +7,31 @@ use App\Models\Order;
 use App\Models\OrderLocation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
 class OrderController extends Controller
 {
+    // عرض الصفحة الرئيسية
+        public function index()
+    {
+        $user = Auth::user();
+
+        return match ($user->role) {
+            'admin' => redirect()->route('admin.dashboard'),
+            'courier' => redirect()->route('courier.dashboard'),
+            default => redirect()->route('customer.dashboard'),
+        };
+    }
+    // تحديث دور المستخدم
+    public function updateRole(Request $request, User $user)
+    {
+        $user->update([
+            'role' => $request->role
+        ]);
+
+        return back();
+    }
     // إنشاء طلب جديد
     public function store(Request $request)
 {
