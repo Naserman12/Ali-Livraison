@@ -48,6 +48,6 @@ const form = useForm({
 })
 
 const submit = () => {
-  form.post('/register/courier')
+  form.post('/register')
 }
 </script>

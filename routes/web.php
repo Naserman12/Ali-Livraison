@@ -16,8 +16,8 @@ Route::get('/', function () {
 });
 Route::get('/register/customer', fn () => inertia('Auth/RegisterCustomer'));
 Route::get('/register/courier', fn () => inertia('Auth/RegisterCourier'));
-Route::get('/register', fn () => inertia('Auth/RegisterChoice'));
-Route::get('/login', fn () => inertia('Auth/Login'));
+// Route::get('/register', fn () => inertia('Auth/RegisterChoice'));
+// Route::get('/login', fn () => inertia('Auth/Login'));
 
 Route::get('/dashboard', [OrderController::class, 'index'])
     ->middleware('auth')
