@@ -6,7 +6,8 @@ import Header from '../../Components/Header.vue'
 
 <template>
   <Header />
-  <AdminLayout>
+ 
+  
   <div class="min-h-screen bg-[#F5F5F5] p-6">
 
     <!-- Header -->
@@ -60,5 +61,5 @@ import Header from '../../Components/Header.vue'
     </div>
 
   </div>
-  </AdminLayout>
+
 </template>

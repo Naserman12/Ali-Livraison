@@ -29,7 +29,7 @@ onMounted(() => {
 
 <template>
   <Header />
-  <AdminLayout>
+ 
   <div class="min-h-screen bg-[#F5F5F5] flex items-center justify-center p-6">
 
     <div class="w-full max-w-2xl bg-[#333333] rounded-2xl shadow-lg p-6">
@@ -82,5 +82,4 @@ onMounted(() => {
 
     </div>
   </div>
-  </AdminLayout>
 </template>
