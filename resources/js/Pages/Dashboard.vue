@@ -27,6 +27,6 @@ import AdminLayout from '@/Layouts/AdminLayout.vue';
                 </div>
             </div>
         </div>
-    <!-- </AuthenticatedLayout> -->
+    <!-- </AuthenticatedLayout> \-->
     </AdminLayout>
 </template>

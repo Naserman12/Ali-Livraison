@@ -12,9 +12,9 @@ use App\Models\User;
 use Illuminate\Http\Request;
 
 // Route::post('/register', [AuthController::class, 'register']);
-Route::post('/login', [AuthController::class, 'login']);
-Route::post('/register/courier', [AuthController::class, 'registerCourier']);
-Route::post('/register/customer', [AuthController::class, 'registerCustomer']);
+// Route::post('/login', [AuthController::class, 'login']);
+// Route::post('/register/courier', [AuthController::class, 'registerCourier']);
+// Route::post('/register/customer', [AuthController::class, 'registerCustomer']);
 
 
 Route::middleware('auth:sanctum')->group(function () {
