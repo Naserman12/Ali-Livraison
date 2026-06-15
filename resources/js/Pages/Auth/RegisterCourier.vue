@@ -14,8 +14,8 @@
 
         <input v-model="form.email" type="email" placeholder="Email"
           class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-orange-500">
-
-        <input v-model="form.phone" type="text" placeholder="Phone Number"
+          
+          <input v-model="form.phone" type="text" placeholder="Phone"
           class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-orange-500">
 
         <input v-model="form.password" type="password" placeholder="Password"
@@ -40,8 +40,8 @@ import { useForm } from '@inertiajs/vue3'
 
 const form = useForm({
   name: '',
-  email: '',
   phone: '',
+  email: '',
   password: '',
   password_confirmation: '',
   role: 'courier',

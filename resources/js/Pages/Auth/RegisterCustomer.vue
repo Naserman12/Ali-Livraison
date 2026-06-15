@@ -45,8 +45,8 @@ import { useForm } from '@inertiajs/vue3'
 
 const form = useForm({
   name: '',
-  email: '',
   phone: '',
+  email: '',
   password: '',
   password_confirmation: '',
   role: 'customer',
