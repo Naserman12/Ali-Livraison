@@ -68,7 +68,7 @@ onMounted(() => {
       <input
         v-model="form.price"
         type="number"
-        placeholder="{{ $t('estimated_price') }}"
+        placeholder="{{$t('estimated_price') }}"
         class="w-full p-3 rounded-lg mb-6 bg-[#1A1A1A] text-white border border-gray-600 focus:outline-none focus:border-[#FF6600]"
       />
 

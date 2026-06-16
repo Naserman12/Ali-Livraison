@@ -189,20 +189,20 @@ arrived_destination: "وصل إلى الوجهة",
 
 
 
-  "available_orders": "📦 الطلبات المتاحة",
+  "available_orders": " الطلبات المتاحة",
   "pickup": "عنوان الاستلام",
   "dropoff": "عنوان التسليم",
   "price": "السعر",
   "accept": "قبول الطلب",
-  "order_accepted": "تم قبول الطلب 🚀",
+  "order_accepted": "تم قبول الطلب ",
 
   
-  "courier_dashboard": "🚚 لوحة تحكم المندوب",
-  "available_orders": "📦 الطلبات المتاحة",
-  "current_mission": "🚀 المهمة الحالية",
-  "profile": "👤 الملف الشخصي",
+  "courier_dashboard": " لوحة تحكم المندوب",
+  "available_orders": "الطلبات المتاحة",
+  "current_mission": " المهمة الحالية",
+  "profile": " الملف الشخصي",
 
-  "create_order": "🚚 إنشاء طلب",
+  "create_order": "إنشاء طلب",
   "choose_service": "اختر نوع الخدمة",
   "parcel": "طرد",
   "meal": "وجبة",
@@ -241,7 +241,7 @@ arrived_destination: "وصل إلى الوجهة",
 
   
   "tracking_loading": "جاري تحميل التتبع...",
-  "order_tracking_title": "🚚 تتبع الطلب رقم",
+  "order_tracking_title": " تتبع الطلب رقم",
   "pickup_qr": "رمز QR للاستلام",
   "delivery_qr": "رمز QR للتسليم",
 
@@ -249,14 +249,14 @@ arrived_destination: "وصل إلى الوجهة",
   "from": "من",
   "to": "إلى",
 
-  "courier_position": "📍 موقع المندوب",
+  "courier_position": " موقع المندوب",
   "no_tracking_data": "لا توجد بيانات تتبع متاحة",
 
-  "latitude": "📍 خط العرض",
+  "latitude": " خط العرض",
   "longitude": "خط الطول",
   "time": "🕒 الوقت",
 
-  "live_tracking": "📍 التتبع المباشر",
+  "live_tracking": " التتبع المباشر",
 
 
 
@@ -453,21 +453,21 @@ create_account_con_subtitle: 'Rejoignez‑nous et commencez à gagner de l’arg
   on_the_way: "En route",
   arrived_destination: "Arrivé à destination",
 
-  "available_orders": "📦 Commandes disponibles",
+  "available_orders": " Commandes disponibles",
   "pickup": "Adresse de retrait",
   "dropoff": "Adresse de livraison",
   "price": "Prix",
   "accept": "Accepter",
-  "order_accepted": "Commande acceptée 🚀",
+  "order_accepted": "Commande acceptée ",
 
   
-  "courier_dashboard": "🚚 Tableau de bord chauffeur",
-  "available_orders": "📦 Commandes disponibles",
+  "courier_dashboard": " Tableau de bord chauffeur",
+  "available_orders": " Commandes disponibles",
   "current_mission": "🚀 Mission actuelle",
   "profile": "👤 Profil",
 
   
-  "create_order": "🚚 Créer une commande",
+  "create_order": " Créer une commande",
   "choose_service": "Choisir service",
   "parcel": "Colis",
   "meal": "Repas",
@@ -487,10 +487,10 @@ create_account_con_subtitle: 'Rejoignez‑nous et commencez à gagner de l’arg
 
   "profile_desc": "Gérer vos informations personnelles",
 
-  "my_orders": "📦 Mes commandes",
+  "my_orders": " Mes commandes",
   "loading": "Chargement...",
   "no_orders_found": "Aucune commande trouvée",
-  "order_number": "📦 Commande #",
+  "order_number": " Commande #",
   "status": "Statut",
   "pickup_address": "Adresse de ramassage",
   "dropoff_address": "Adresse de livraison",
@@ -503,7 +503,7 @@ create_account_con_subtitle: 'Rejoignez‑nous et commencez à gagner de l’arg
 
 
   "tracking_loading": "Chargement du suivi...",
-  "order_tracking_title": "🚚 Suivi de commande #",
+  "order_tracking_title": " Suivi de commande #",
   "pickup_qr": "QR de ramassage",
   "delivery_qr": "QR de livraison",
 
@@ -511,14 +511,14 @@ create_account_con_subtitle: 'Rejoignez‑nous et commencez à gagner de l’arg
   "from": "De",
   "to": "À",
 
-  "courier_position": "📍 Position du livreur",
+  "courier_position": " Position du livreur",
   "no_tracking_data": "Aucune donnée de suivi disponible",
 
-  "latitude": "📍 Latitude",
+  "latitude": " Latitude",
   "longitude": "Longitude",
   "time": "🕒 Heure",
 
-  "live_tracking": "📍 Tracking Live",
+  "live_tracking": " Tracking Live",
 
 
 

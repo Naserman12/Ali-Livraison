@@ -21,7 +21,7 @@ async function acceptOrder(id) {
   <div class="min-h-screen bg-[#F5F5F5] p-6">
 
     <h1 class="text-xl font-bold text-[#1A1A1A] mb-4">
-      📦 {{t('available_orders')}}
+      📦 {{$t('available_orders')}}
     </h1>
 
     <div
