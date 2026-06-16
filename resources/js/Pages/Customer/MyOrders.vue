@@ -25,18 +25,18 @@ onMounted(async () => {
 
     <!-- Title -->
     <h1 class="text-2xl font-bold text-[#1A1A1A] mb-6">
-      📦 Mes commandes
+      📦 {{$t('my_orders')}}
     </h1>
 
     <!-- Loading -->
     <div v-if="loading" class="text-gray-600">
-      Chargement...
+      {{$t('loading')}}
     </div>
 
     <!-- Empty state -->
     <div v-if="!loading && orders.length === 0"
          class="text-gray-500">
-      Aucune commande trouvée
+      {{$t('no_orders_found')}}
     </div>
 
     <!-- Orders list -->
@@ -46,19 +46,19 @@ onMounted(async () => {
       <!-- Header -->
       <div class="flex justify-between items-center mb-2">
         <p class="font-bold">
-          📦 Commande #{{ order.id }}
+          📦 {{$t('order_number')}} #{{ order.id }}
         </p>
 
         <span class="text-xs px-3 py-1 rounded-full bg-[#1A1A1A]">
-          {{ order.status }}
+         {{ $t('status') }}  {{ order.status }}
         </span>
       </div>
 
       <!-- Addresses -->
       <div class="text-sm text-gray-300 mb-3">
-        📍 {{ order.pickup_address }}
+        📍 {{ $t('pickup_address') }}: {{ order.pickup_address }}
         <br />
-        ➜ {{ order.dropoff_address }}
+        ➜ {{ $t('dropoff_address') }} {{ order.dropoff_address }}
       </div>
 
       <!-- Actions -->
@@ -68,7 +68,7 @@ onMounted(async () => {
           :href="`/customer/orders/${order.id}`"
           class="text-[#FF6600] font-semibold hover:underline"
         >
-          Voir détails
+          {{$t('view_details')}}
         </Link>
 
         <!-- status color indicator -->

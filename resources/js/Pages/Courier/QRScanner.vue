@@ -21,12 +21,11 @@ onMounted(() => {
       await axios.post(`/api/order/${props.orderId}/${props.type}-scan`, {
         code: decodedText
       })
-
-      alert('✔ Success')
+      alert($t('success'),'✔');
       scanner.clear()
 
     } catch (e) {
-      alert('❌ Invalid QR')
+      alert($t(' Invalid QR'),'❌')
     }
 
   })
@@ -39,7 +38,7 @@ onMounted(() => {
   <div class="p-6">
 
     <h1 class="text-xl font-bold mb-4">
-      📷 Scanner QR
+      📷 {{$t('scan')}}
     </h1>
 
     <div id="reader"></div>

@@ -26,10 +26,8 @@ class OrderController extends Controller
     // تحديث دور المستخدم
     public function updateRole(Request $request, User $user)
     {
-        $user->update([
-            'role' => $request->role
-        ]);
-
+        if($user->hasRole('admin')) return
+        $user->assignRole($request->role);
         return back();
     }
     // إنشاء طلب جديد

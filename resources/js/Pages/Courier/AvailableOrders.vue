@@ -12,7 +12,7 @@ onMounted(async () => {
 
 async function acceptOrder(id) {
   await axios.post(`/api/courier/orders/${id}/accept`)
-  alert('Commande acceptée 🚀')
+  alert($t('order_accepted'))
 }
 </script>
 
@@ -21,7 +21,7 @@ async function acceptOrder(id) {
   <div class="min-h-screen bg-[#F5F5F5] p-6">
 
     <h1 class="text-xl font-bold text-[#1A1A1A] mb-4">
-      📦 Commandes disponibles
+      📦 {{t('available_orders')}}
     </h1>
 
     <div
@@ -30,15 +30,15 @@ async function acceptOrder(id) {
       class="bg-[#333333] text-white p-4 rounded-xl mb-3 shadow"
     >
 
-      <p>📍 {{ order.pickup_address }}</p>
-      <p>🏁 {{ order.dropoff_address }}</p>
-      <p>💰 {{ order.price }} CFA</p>
+      <p>📍 {{ $t('pickup') }} : {{ order.pickup_address }}</p>
+      <p>🏁 {{ $t('dropoff') }} : {{ order.dropoff_address }}</p>
+      <p>💰 {{ $t('price') }} : {{ order.price }} CFA</p>
 
       <button
         @click="acceptOrder(order.id)"
         class="mt-3 bg-[#FF6600] text-white px-4 py-2 rounded-lg hover:opacity-90"
       >
-        Accepter
+        {{$t('accept')}}
       </button>
 
     </div>

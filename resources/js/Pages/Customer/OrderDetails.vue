@@ -85,22 +85,22 @@ function updateMarker(lat, lng) {
   <div class="min-h-screen bg-[#F5F5F5] p-6" >
       <!-- Loading -->
       <div v-if="loading" class="text-gray-600">
-        Chargement du suivi...
+        {{$t('tracking_loading')}}
       </div>
     <div v-if="order && !loading" class="">
     <!-- Title -->
     <h1 class="text-2xl font-bold text-[#1A1A1A] mb-4">
-      🚚 Suivi de commande #{{ order.id }}
+      🚚 {{$t('order_tracking_title')}} #{{ order.id }}
     </h1>
 
         <!-- QR Pickup -->
     <div v-if="order.status === 'accepted' || order.status === 'courier_arrived'">
-      <h3>QR de ramassage</h3>
+      <h3>{{$t('pickup_qr')}}</h3>
       <img :src="qr?.pickup_qr" />
     </div>
     <!-- QR Delivery -->
     <div v-if="order.status === 'arrived_destination'">
-      <h3>QR de livraison</h3>
+      <h3>{{ $t('delivery_qr') }}</h3>
       <img :src="qr?.delivery_qr" />
     </div>
 
@@ -108,15 +108,15 @@ function updateMarker(lat, lng) {
     <div v-if="order" class="bg-[#333333] text-white p-5 rounded-2xl shadow-md mb-6">
 
       <p class="text-lg font-bold mb-2">
-        📦 Statut: {{ order.status }}
+        📦 {{$t('status')}}: {{ order.status }}
       </p>
 
       <p class="text-sm text-gray-300">
-        📍 De: {{ order.pickup_address }}
+        📍 {{$t('from')}}: {{ order.pickup_address }}
       </p>
 
       <p class="text-sm text-gray-300">
-        ➜ À: {{ order.dropoff_address }}
+        ➜ {{$t('to')}}: {{ order.dropoff_address }}
       </p>
 
       <!-- status badge -->
@@ -130,12 +130,12 @@ function updateMarker(lat, lng) {
 
     <!-- Tracking Section -->
     <h2 class="text-lg font-bold text-[#1A1A1A] mb-3">
-      📍 Position du livreur
+      📍 {{$t('courier_position')}}
     </h2>
 
     <!-- Empty -->
     <div v-if="tracking.length === 0" class="text-gray-500">
-      Aucune donnée de suivi disponible
+      {{$t('no_tracking_data')}}
     </div>
 
     <!-- Tracking List -->
@@ -145,23 +145,23 @@ function updateMarker(lat, lng) {
       <div class="flex justify-between text-sm">
 
         <span class="text-[#1A1A1A] font-semibold">
-          📍 Latitude: {{ t.latitude }}
+          📍 {{$t('latitude')}}: {{ t.latitude }}
         </span>
 
         <span class="text-[#FF6600] font-semibold">
-          Longitude: {{ t.longitude }}
+          {{$t('longitude')}}: {{ t.longitude }}
         </span>
 
       </div>
 
       <p class="text-xs text-gray-500 mt-1">
-        🕒 {{ t.created_at }}
+        🕒{{ $t('time') }} : {{ t.created_at }}
       </p>
 
     </div>
     <div class="p-6">
 
-    <h1 class="text-xl font-bold">📍 Tracking Live</h1>
+    <h1 class="text-xl font-bold">📍 {{$t('live_tracking')}}</h1>
 
     <div id="map" class="h-[400px] mt-4 rounded"></div>
 

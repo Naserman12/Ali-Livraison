@@ -24,6 +24,13 @@ Route::get('/dashboard', [OrderController::class, 'index'])
     ->name('dashboard');
 // هذه المسارات خاصة بالملف الشخصي للمستخدم
 Route::middleware('auth')->group(function () {
+
+    Route::get('/profile', function () {
+        return Inertia::render('Profile/Index');
+    })->name('profile');
+});
+Route::middleware('auth')->group(function () {
+    
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

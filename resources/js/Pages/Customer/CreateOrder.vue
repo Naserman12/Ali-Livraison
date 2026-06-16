@@ -36,7 +36,7 @@ onMounted(() => {
 
       <!-- العنوان -->
       <h1 class="text-xl font-bold text-white mb-6">
-        🚚 Créer une commande
+        🚚 {{$t('create_order')}}
       </h1>
 
       <!-- نوع الخدمة -->
@@ -44,23 +44,23 @@ onMounted(() => {
         v-model="form.service_type_id"
         class="w-full p-3 rounded-lg mb-4 bg-[#1A1A1A] text-white border border-gray-600 focus:outline-none focus:border-[#FF6600]"
       >
-        <option value="">Choisir service</option>
-        <option value="1">Colis</option>
-        <option value="2">Repas</option>
-        <option value="3">Documents</option>
+        <option value="">{{$t('choose_service')}}</option>
+        <option value="1">{{$t('parcel')}}</option>
+        <option value="2">{{$t('meal')}}</option>
+        <option value="3">{{$t('documents')}}</option>
       </select>
 
       <!-- pickup -->
       <input
         v-model="form.pickup_address"
-        placeholder="Adresse de ramassage"
+        placeholder="{{$t('pickup_address')}}"
         class="w-full p-3 rounded-lg mb-4 bg-[#1A1A1A] text-white border border-gray-600 focus:outline-none focus:border-[#FF6600]"
       />
 
       <!-- dropoff -->
       <input
         v-model="form.dropoff_address"
-        placeholder="Adresse de livraison"
+        placeholder="{{$t('dropoff_address')}}"
         class="w-full p-3 rounded-lg mb-4 bg-[#1A1A1A] text-white border border-gray-600 focus:outline-none focus:border-[#FF6600]"
       />
 
@@ -68,7 +68,7 @@ onMounted(() => {
       <input
         v-model="form.price"
         type="number"
-        placeholder="Prix estimé"
+        placeholder="{{ $t('estimated_price') }}"
         class="w-full p-3 rounded-lg mb-6 bg-[#1A1A1A] text-white border border-gray-600 focus:outline-none focus:border-[#FF6600]"
       />
 
@@ -77,7 +77,7 @@ onMounted(() => {
         @click="submit"
         class="w-full bg-[#FF6600] hover:bg-orange-600 text-white font-bold py-3 rounded-lg transition"
       >
-        Envoyer la commande
+        {{$t('send_order')}}
       </button>
 
     </div>

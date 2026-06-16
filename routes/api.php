@@ -43,7 +43,7 @@ Route::middleware('auth:sanctum')->group(function () {
 });
 Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/admin/couriers', function () {
-    return User::where('role', 'courier')->latest()->get();
+    return User::where(hasRole('courier'))->latest()->get();
     });
     Route::get('/admin/users', function () {
     return User::where('role', 'customer')->latest()->get();

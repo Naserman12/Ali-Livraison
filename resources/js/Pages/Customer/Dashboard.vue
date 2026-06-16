@@ -12,11 +12,11 @@ import Header from '../../Components/Header.vue'
 
     <!-- Header -->
     <h1 class="text-2xl font-bold text-[#1A1A1A]">
-      👋 Bienvenue
+      👋 {{$t('welcome')}}
     </h1>
 
     <p class="text-gray-600 mt-1">
-      Gérez vos commandes facilement
+      {{$t('manage_orders_easily')}}
     </p>
 
     <!-- Cards -->
@@ -28,9 +28,9 @@ import Header from '../../Components/Header.vue'
         class="bg-[#FF6600] hover:bg-orange-600 transition text-white p-6 rounded-2xl shadow-md"
       >
         <div class="text-3xl mb-2">➕</div>
-        <h2 class="text-lg font-bold">Créer une commande</h2>
+        <h2 class="text-lg font-bold">{{$t('create_order')}}</h2>
         <p class="text-sm opacity-90 mt-1">
-          Envoyer une nouvelle demande de livraison
+          {{$t('create_order_desc')}}
         </p>
       </Link>
 
@@ -40,9 +40,9 @@ import Header from '../../Components/Header.vue'
         class="bg-[#333333] hover:bg-[#444444] transition text-white p-6 rounded-2xl shadow-md"
       >
         <div class="text-3xl mb-2">📦</div>
-        <h2 class="text-lg font-bold">Mes commandes</h2>
+        <h2 class="text-lg font-bold">{{$t('my_orders')}}</h2>
         <p class="text-sm opacity-80 mt-1">
-          Voir et suivre vos commandes
+          {{$t('my_orders_desc')}}
         </p>
       </Link>
 
@@ -52,9 +52,9 @@ import Header from '../../Components/Header.vue'
         class="bg-[#1A1A1A] hover:bg-black transition text-white p-6 rounded-2xl shadow-md"
       >
         <div class="text-3xl mb-2">👤</div>
-        <h2 class="text-lg font-bold">Profil</h2>
+        <h2 class="text-lg font-bold">{{$t('profile')}}</h2>
         <p class="text-sm opacity-80 mt-1">
-          Gérer vos informations personnelles
+          {{$t('profile_desc')}}
         </p>
       </Link>
 
