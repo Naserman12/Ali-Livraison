@@ -115,9 +115,22 @@ public function updateLocation(Request $request)
 // عرض طلبات الزبون
 public function myOrders()
 {
-    return Order::where('customer_id', auth()->id())
-        ->latest()
-        ->get();
+      $user = auth()->user();
+
+    // إذا كان عميل
+    if ($user->hasRole('customer')) {
+        return Order::where('customer_id', $user->id)
+            ->latest()
+            ->get();
+    }
+
+    // إذا كان مندوب
+    if ($user->hasRole('courier')) {
+        return Order::where('courier_id', $user->id)
+            ->latest()
+            ->get();
+    }
+    return [];
 }
 // عرض طلبات المندوب
 public function show($id)
