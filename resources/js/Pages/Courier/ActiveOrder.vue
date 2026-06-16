@@ -153,7 +153,7 @@ async function updateStatus(status) {
     </div>
   </div>
   <div v-else class="text-center text-gray-600 mt-10">
-  {{$t('no_active_order')}}
+  {{$t('no_orders_found')}}
 </div>
 </div>
 </template>
