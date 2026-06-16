@@ -8,11 +8,12 @@
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
 
-      <div class="bg-[#FF6600] text-white p-4 rounded-xl shadow">
+      <Link
+        href="/courier/orders" class="bg-[#FF6600] text-white p-4 rounded-xl shadow">
         📦 Commandes disponibles
-      </div>
+      </Link>
 
-      <div class="bg-[#1A1A1A] text-white p-4 rounded-xl shadow">
+      <Link href="/courier/active" class="bg-[#1A1A1A] text-white p-4 rounded-xl shadow">
         🚀 Mission actuelle
       </div>
 
@@ -25,5 +26,6 @@
   </div>
 </template>
 <script setup>
+import { Link } from '@inertiajs/vue3'
 import Header from '@/Components/Header.vue'
 </script>
