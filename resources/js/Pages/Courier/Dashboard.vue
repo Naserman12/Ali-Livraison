@@ -15,7 +15,7 @@
 
       <Link href="/courier/active" class="bg-[#1A1A1A] text-white p-4 rounded-xl shadow">
         🚀 Mission actuelle
-      </div>
+      </Link>
 
       <div class="bg-[#333333] text-white p-4 rounded-xl shadow">
         👤 Profil
