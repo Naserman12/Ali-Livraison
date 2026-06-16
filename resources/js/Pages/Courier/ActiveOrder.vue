@@ -88,6 +88,7 @@ async function updateStatus(status) {
 
 <template>
   <Header />
+  <div> 
   <div class="min-h-screen bg-[#F5F5F5] p-6" v-if="order">
 
     <h1 class="text-xl font-bold text-[#1A1A1A]">
@@ -151,4 +152,8 @@ async function updateStatus(status) {
       </button>
     </div>
   </div>
+  <div v-else class="text-center text-gray-600 mt-10">
+  {{$t('no_active_order')}}
+</div>
+</div>
 </template>
