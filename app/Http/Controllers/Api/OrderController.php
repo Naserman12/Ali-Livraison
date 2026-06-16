@@ -17,9 +17,9 @@ class OrderController extends Controller
     {
         $user = Auth::user();
 
-        return match ($user->role) {
-            'admin' => redirect()->route('admin.dashboard'),
-            'courier' => redirect()->route('courier.dashboard'),
+        return match (true) {
+            $user->hasRole('admin') => redirect()->route('admin.dashboard'),
+            $user->hasRole('courier') => redirect()->route('courier.dashboard'),
             default => redirect()->route('customer.dashboard'),
         };
     }
