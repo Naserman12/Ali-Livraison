@@ -73,6 +73,7 @@ public function availableOrders()
 {
     return Order::where('status', 'pending')->get();
 }
+
 // قبول الطلب من طرف المندوب
 public function acceptOrder($id)
 {

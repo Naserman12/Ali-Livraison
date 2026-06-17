@@ -93,7 +93,7 @@ async function updateStatus(status) {
 
     <h1 class="text-xl font-bold text-[#1A1A1A]">
       🚀 {{$t('mission_current')}}
-    </h1>
+    </h1>Q
         <div class="mt-6 bg-[#333333] text-white p-4 rounded-xl">
       <p class="text-sm text-gray-500 mb-2">
         {{$t('scan_qr_instruction')}}
