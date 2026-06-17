@@ -48,7 +48,7 @@ import Header from '../../Components/Header.vue'
 
       <!-- Profile -->
       <Link
-        href="/customer/profile"
+        href="/profile"
         class="bg-[#1A1A1A] hover:bg-black transition text-white p-6 rounded-2xl shadow-md"
       >
         <div class="text-3xl mb-2">👤</div>

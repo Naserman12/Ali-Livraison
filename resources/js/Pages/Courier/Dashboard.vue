@@ -17,9 +17,9 @@
         🚀 {{$t('current_mission')}}
       </Link>
 
-      <div class="bg-[#333333] text-white p-4 rounded-xl shadow">
+      <Link href="/profile" class="bg-[#333333] text-white p-4 rounded-xl shadow">
         👤 {{$t('profile')}} 
-      </div>
+      </Link>
 
     </div>
 
