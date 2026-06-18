@@ -73,7 +73,12 @@ public function availableOrders()
 {
     return Order::where('status', 'pending')->get();
 }
-
+public function courierActiveOrders(){
+    return Auth::user()
+            ->courierOrders()
+            ->whereNotIn('status', ['delivered', 'cancelled'])
+            ->latest()->get();
+}
 // قبول الطلب من طرف المندوب
 public function acceptOrder($id)
 {

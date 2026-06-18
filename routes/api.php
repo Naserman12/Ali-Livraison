@@ -78,6 +78,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/orders/available', [OrderController::class, 'availableOrders']);
     Route::post('/orders/{id}/accept', [OrderController::class, 'acceptOrder']);
     Route::post('/orders/{id}/status', [OrderController::class, 'updateStatus']);
+    Route::get('couriers/active', [OrderController::class, 'courierActiveOrders']);
 
     // Tracking
     Route::post('/location', [OrderController::class, 'updateLocation']);

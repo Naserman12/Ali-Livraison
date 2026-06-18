@@ -46,8 +46,8 @@ const order = ref(null)
 let intervalId = null
 
 onMounted(async () => {
-  const res = await axios.get('/api/orders')
-  order.value = res.data.find(o => o.status !== 'delivered')
+  const res = await axios.get('/api/couriers/active')
+  order.value = res.data
 
   if (order.value) {
     startTracking()
@@ -89,7 +89,7 @@ async function updateStatus(status) {
 <template>
   <Header />
   <div> 
-  <div class="min-h-screen bg-[#F5F5F5] p-6" v-if="order">
+  <div class="min-h-screen bg-[#F5F5F5] p-6" v-if="orders.length">
 
     <h1 class="text-xl font-bold text-[#1A1A1A]">
       🚀 {{$t('mission_current')}}
@@ -113,44 +113,59 @@ async function updateStatus(status) {
 </Link>
     </div>
 
-    <div class="bg-[#333333] text-white p-4 rounded-xl mt-4">
+<div
+  v-for="order in orders"
+  :key="order.id"
+  class="bg-white rounded-xl shadow p-5 mb-6"
+>
+  <div class="bg-[#333333] text-white p-4 rounded-xl">
+    <p>
+      📍 {{ $t('pickup') }}:
+      {{ order.pickup_address }}
+    </p>
+    <p>
+      🏁 {{ $t('dropoff') }}:
+      {{ order.dropoff_address }}
+    </p>
+    <p>
+      🚦 {{ $t('status') }}:
+      {{ order.status }}
+    </p>
 
-      <p>📍 {{ $t('pickup') }}: {{ order.pickup_address }}</p>
-      <p>🏁 {{ $t('dropoff') }}: {{ order.dropoff_address }}</p>
-      <p>🚦 {{ $t('status') }}: {{ order.status }}</p>
+  </div>
+  <div class="grid grid-cols-2 gap-3 mt-4">
 
-    </div>
+    <button
+      @click="updateStatus(order.id,'courier_arrived')"
+      class="bg-[#1A1A1A] text-white p-2 rounded-lg"
+    >
+      {{ $t('courier_arrived') }}
+    </button>
 
-    <div class="grid grid-cols-2 gap-3 mt-4">
+    <button
+      @click="updateStatus(order.id,'picked_up')"
+      class="bg-[#FF6600] text-white p-2 rounded-lg"
+    >
+      {{ $t('picked_up') }}
+    </button>
 
-      <button
-        @click="updateStatus('courier_arrived')"
-        class="bg-[#1A1A1A] text-white p-2 rounded-lg"
-      >
-        {{$t('courier_arrived')}}
-      </button>
+    <button
+      @click="updateStatus(order.id,'on_the_way')"
+      class="bg-[#333333] text-white p-2 rounded-lg"
+    >
+      {{ $t('on_the_way') }}
+    </button>
 
-      <button
-        @click="updateStatus('picked_up')"
-        class="bg-[#FF6600] text-white p-2 rounded-lg"
-      >
-        {{$t('picked_up')}}
-      </button>
+    <button
+      @click="updateStatus(order.id,'arrived_destination')"
+      class="bg-[#FF6600] text-white p-2 rounded-lg"
+    >
+      {{ $t('arrived_destination') }}
+    </button>
 
-      <button
-        @click="updateStatus('on_the_way')"
-        class="bg-[#333333] text-white p-2 rounded-lg"
-      >
-        {{$t('on_the_way')}}
-      </button>
+  </div>
 
-      <button
-        @click="updateStatus('arrived_destination')"
-        class="bg-[#FF6600] text-white p-2 rounded-lg"
-      >
-        {{$t('arrived_destination')}}
-      </button>
-    </div>
+</div>
   </div>
   <div v-else class="text-center text-gray-600 mt-10">
   {{$t('no_orders_found')}}
