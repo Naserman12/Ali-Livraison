@@ -42,14 +42,14 @@ import { Link } from '@inertiajs/vue3'
 import axios from 'axios'
 import Header from '@/Components/Header.vue'
 
-const order = ref(null)
+const orders = ref(null)
 let intervalId = null
 
 onMounted(async () => {
   const res = await axios.get('/api/couriers/active')
-  order.value = res.data
+  orders.value = res.data
 
-  if (order.value) {
+  if (orders.value.length) {
     startTracking()
   }
 })
@@ -81,19 +81,23 @@ onBeforeUnmount(() => {
   if (intervalId) clearInterval(intervalId)
 })
 
-async function updateStatus(status) {
-  await axios.post(`/api/courier/orders/${order.value.id}/status`, { status })
+async function updateStatus(orderId, status) {
+  await axios.post(`/api/courier/orders/${orderId}/status`, { status })
 }
 </script>
 
 <template>
   <Header />
   <div> 
-  <div class="min-h-screen bg-[#F5F5F5] p-6" v-if="orders.length">
-
+  <div class="min-h-screen bg-[#F5F5F5] p-6" v-if="orders?.length"> 
+<div
+    v-for="order in orders"
+    :key="order.id"
+    class="bg-white rounded-xl shadow p-5 mb-6"
+    >
     <h1 class="text-xl font-bold text-[#1A1A1A]">
       🚀 {{$t('mission_current')}}
-    </h1>Q
+    </h1>
         <div class="mt-6 bg-[#333333] text-white p-4 rounded-xl">
       <p class="text-sm text-gray-500 mb-2">
         {{$t('scan_qr_instruction')}}
@@ -104,7 +108,6 @@ async function updateStatus(status) {
 >
   {{$t('scan_pickup_qr')}}
 </Link>
-
 <Link
   :href="`/courier/qr/${order.id}/delivery`"
   class="bg-green-500 text-white p-2 rounded ml-2 mt-2"
@@ -112,12 +115,6 @@ async function updateStatus(status) {
   {{$t('scan_delivery_qr')}}
 </Link>
     </div>
-
-<div
-  v-for="order in orders"
-  :key="order.id"
-  class="bg-white rounded-xl shadow p-5 mb-6"
->
   <div class="bg-[#333333] text-white p-4 rounded-xl">
     <p>
       📍 {{ $t('pickup') }}:
@@ -131,40 +128,33 @@ async function updateStatus(status) {
       🚦 {{ $t('status') }}:
       {{ order.status }}
     </p>
-
   </div>
   <div class="grid grid-cols-2 gap-3 mt-4">
-
     <button
       @click="updateStatus(order.id,'courier_arrived')"
       class="bg-[#1A1A1A] text-white p-2 rounded-lg"
     >
       {{ $t('courier_arrived') }}
     </button>
-
     <button
       @click="updateStatus(order.id,'picked_up')"
       class="bg-[#FF6600] text-white p-2 rounded-lg"
     >
       {{ $t('picked_up') }}
     </button>
-
     <button
       @click="updateStatus(order.id,'on_the_way')"
       class="bg-[#333333] text-white p-2 rounded-lg"
     >
       {{ $t('on_the_way') }}
     </button>
-
     <button
       @click="updateStatus(order.id,'arrived_destination')"
       class="bg-[#FF6600] text-white p-2 rounded-lg"
     >
       {{ $t('arrived_destination') }}
     </button>
-
   </div>
-
 </div>
   </div>
   <div v-else class="text-center text-gray-600 mt-10">

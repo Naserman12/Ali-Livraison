@@ -34,29 +34,33 @@ const updatePassword = () => {
 </script>
 
 <template>
-    <section>
-        <header>
-            <h2 class="text-lg font-medium text-gray-900">
-                Update Password
+    <section class="service-card">
+
+        <header class="mb-6">
+            <h2 class="text-2xl font-bold text-[#0D0D0D]">
+                🔒 {{$t('update_password')}}
             </h2>
 
-            <p class="mt-1 text-sm text-gray-600">
-                Ensure your account is using a long, random password to stay
-                secure.
+            <p class="mt-2 text-gray-500">
+                {{$t('update_password_desc')}}
             </p>
         </header>
 
-        <form @submit.prevent="updatePassword" class="mt-6 space-y-6">
+        <form @submit.prevent="updatePassword" class="space-y-5">
+
             <div>
-                <InputLabel for="current_password" value="Current Password" />
+                <InputLabel
+                    for="current_password"
+                    :value="$t('current_password')"
+                    class="font-semibold text-[#0D0D0D]"
+                />
 
                 <TextInput
                     id="current_password"
                     ref="currentPasswordInput"
                     v-model="form.current_password"
                     type="password"
-                    class="mt-1 block w-full"
-                    autocomplete="current-password"
+                    class="mt-2 block w-full rounded-xl border-gray-300 focus:border-[#FF7A00] focus:ring-[#FF7A00]"
                 />
 
                 <InputError
@@ -66,32 +70,38 @@ const updatePassword = () => {
             </div>
 
             <div>
-                <InputLabel for="password" value="New Password" />
+                <InputLabel
+                    for="password"
+                    :value="$t('new_password')"
+                    class="font-semibold text-[#0D0D0D]"
+                />
 
                 <TextInput
                     id="password"
                     ref="passwordInput"
                     v-model="form.password"
                     type="password"
-                    class="mt-1 block w-full"
-                    autocomplete="new-password"
+                    class="mt-2 block w-full rounded-xl border-gray-300 focus:border-[#FF7A00] focus:ring-[#FF7A00]"
                 />
 
-                <InputError :message="form.errors.password" class="mt-2" />
+                <InputError
+                    :message="form.errors.password"
+                    class="mt-2"
+                />
             </div>
 
             <div>
                 <InputLabel
                     for="password_confirmation"
-                    value="Confirm Password"
+                    :value="$t('confirm_password')"
+                    class="font-semibold text-[#0D0D0D]"
                 />
 
                 <TextInput
                     id="password_confirmation"
                     v-model="form.password_confirmation"
                     type="password"
-                    class="mt-1 block w-full"
-                    autocomplete="new-password"
+                    class="mt-2 block w-full rounded-xl border-gray-300 focus:border-[#FF7A00] focus:ring-[#FF7A00]"
                 />
 
                 <InputError
@@ -101,22 +111,46 @@ const updatePassword = () => {
             </div>
 
             <div class="flex items-center gap-4">
-                <PrimaryButton :disabled="form.processing">Save</PrimaryButton>
+
+                <button
+                    type="submit"
+                    :disabled="form.processing"
+                    class="bg-[#FF7A00] hover:bg-[#E86A00] text-white px-6 py-3 rounded-xl transition-all duration-300 disabled:opacity-50"
+                >
+                    {{$t('save_changes')}}
+                </button>
 
                 <Transition
-                    enter-active-class="transition ease-in-out"
+                    enter-active-class="transition ease-in-out duration-300"
                     enter-from-class="opacity-0"
-                    leave-active-class="transition ease-in-out"
+                    leave-active-class="transition ease-in-out duration-300"
                     leave-to-class="opacity-0"
                 >
                     <p
                         v-if="form.recentlySuccessful"
-                        class="text-sm text-gray-600"
+                        class="text-green-600 font-medium"
                     >
-                        Saved.
+                        ✅ {{$t('saved_successfully')}}
                     </p>
                 </Transition>
+
             </div>
+
         </form>
+
     </section>
 </template>
+<style 
+>
+.service-card {
+    background: white;
+    border: 1px solid #FF7A00;
+    padding: 24px;
+    border-radius: 16px;
+    transition: all .3s ease;
+}
+
+.service-card:hover {
+    box-shadow: 0 10px 25px rgba(0,0,0,.08);
+}
+</style>

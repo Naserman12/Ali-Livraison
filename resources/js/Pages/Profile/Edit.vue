@@ -126,6 +126,11 @@ const submit = () => {
                             class="w-full mt-2 p-3 bg-[#1A1A1A] text-white border border-gray-600 rounded-xl focus:border-[#FF6600] focus:outline-none"
                         >
                     </div>
+                <div
+                    class="bg-white p-4 shadow sm:rounded-lg sm:p-8"
+                >
+                    <UpdatePasswordForm class="max-w-xl" />
+                </div>
 
                 </div>
 
