@@ -140,8 +140,7 @@ const updatePassword = () => {
 
     </section>
 </template>
-<style 
->
+<style scoped>
 .service-card {
     background: white;
     border: 1px solid #FF7A00;

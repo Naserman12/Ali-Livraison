@@ -103,19 +103,19 @@ async function updateStatus(orderId, status) {
         {{$t('scan_qr_instruction')}}
       </p>
           <Link
-  :href="`/courier/qr/${order.id}/pickup`"
-  class="bg-blue-500 text-white p-2 rounded mt-2 "
+  :href="`/api/order/${order.id}/pickup-scan`"
+  class="bg-blue-500 text-white p-2 mr-2 rounded mt-2 "
 >
   {{$t('scan_pickup_qr')}}
 </Link>
 <Link
-  :href="`/courier/qr/${order.id}/delivery`"
+  :href="`/api/order/${order.id}/delivery-scan`"
   class="bg-green-500 text-white p-2 rounded ml-2 mt-2"
 >
   {{$t('scan_delivery_qr')}}
 </Link>
     </div>
-  <div class="bg-[#333333] text-white p-4 rounded-xl">
+  <div class="bg-[#333333] text-white p-4 rounded-xl mt-2">
     <p>
       📍 {{ $t('pickup') }}:
       {{ order.pickup_address }}

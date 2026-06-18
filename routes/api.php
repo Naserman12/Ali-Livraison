@@ -83,8 +83,8 @@ Route::middleware('auth:sanctum')->group(function () {
     // Tracking
     Route::post('/location', [OrderController::class, 'updateLocation']);
     // Qr verification
-    // Route::post('/order/{id}/pickup-scan', [QRController::class, 'pickup']);
-// Route::post('/order/{id}/delivery-scan', [QRController::class, 'delivery']);
+    Route::post('/order/{id}/pickup-scan', [QRController::class, 'pickup'])->name('courier.qr.pickup');;
+Route::post('/order/{id}/delivery-scan', [QRController::class, 'delivery'])->name('courier.qr.delivery');;
 
 Route::get('/order/{id}/qr', [QRController::class, 'getQr']);
 });
